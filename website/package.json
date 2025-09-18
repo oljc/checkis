@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "rspress dev",
     "build": "rspress build",
-    "preview": "rspress preview"
+    "preview": "rspress preview",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@arco-design/web-react": "^2.66.5",

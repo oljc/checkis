@@ -4,6 +4,16 @@
   "description": "",
   "license": "MIT",
   "type": "module",
+  "sideEffects": false,
+  "homepage": "https://checkis.cn",
+  "bugs": {
+    "url": "https://github.com/oljc/checkis/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oljc/checkis.git",
+    "directory": "core"
+  },
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -18,24 +28,18 @@
   },
   "unpkg": "./dist/checkis.min.js",
   "browser": "./dist/checkis.min.js",
-  "files": [
-    "cjs",
-    "esm",
-    "types",
-    "checkis.js",
-    "checkis.min.js",
-    "README.md"
-  ],
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build --watch",
     "test": "rstest",
-    "test:dev": "rstest watch"
+    "test:dev": "rstest watch",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@rslib/core": "^0.13.3",
     "@rstest/core": "^0.4.0"
   },
+  "keywords": ["type-check", "validation", "is", "javascript", "typescript", "utils"],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

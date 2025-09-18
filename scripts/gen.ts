@@ -19,6 +19,7 @@ const main = async () => {
     console.log('Build Success!');
   } catch (error) {
     console.error('Build Index:', error);
+    process.exit(1);
   }
 };
 
