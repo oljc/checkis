@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
+      - name: Setup
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Docs
+        run: pnpm run build:website
+
+      - name: EdgeOne
+        run: npx edgeone pages deploy ./website/doc_build -n checkis -t ${{ secrets.EDGEONE_TOKEN }}
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_TOKEN }}

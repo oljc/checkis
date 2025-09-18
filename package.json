@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "gen": "tsx scripts/gen.ts",
-    "build": "pnpm run gen && pnpm --filter checkis build",
     "dev": "pnpm --filter website dev",
+    "build": "pnpm run gen && pnpm --filter checkis build",
+    "build:website": "pnpm --filter website build",
     "test": "pnpm --filter checkis test",
     "test:dev": "pnpm --filter checkis test:dev",
     "check": "biome check --write",
