@@ -14,14 +14,14 @@
   },
   "author": "oljc",
   "license": "MIT",
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.17.0",
   "engines": {
     "node": ">=18.0.0",
-    "pnpm": ">=9.0.0"
+    "pnpm": ">=9.15.9"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",
-    "@types/node": "^24.5.0",
+    "@types/node": "^24.5.2",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.2",
     "tsx": "^4.20.5",
