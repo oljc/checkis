@@ -12,17 +12,17 @@
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.3.0",
     "@react-three/rapier": "^2.1.0",
-    "@rspress/core": "2.0.0-beta.32",
-    "@rspress/shared": "2.0.0-beta.32",
+    "@rspress/core": "2.0.0-beta.33",
+    "@rspress/shared": "2.0.0-beta.33",
     "meshline": "^3.3.1",
-    "motion": "^12.23.12",
+    "motion": "^12.23.14",
     "ogl": "^1.0.11",
     "three": "^0.180.0"
   },
   "devDependencies": {
     "@arco-plugins/unplugin-react": "2.0.0-beta.5",
     "@rsbuild/plugin-less": "^1.5.0",
-    "@types/node": "^24.5.0",
+    "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/three": "^0.180.0"
   }
