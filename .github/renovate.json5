@@ -13,10 +13,10 @@
       rangeStrategy: 'bump',
     },
     {
-      "groupName": "rstack",
-      "matchPackageNames": ["/rspress/", "/rslib/", "/rstest/", "/rsbuild/"],
-      "groupSlug": "rstack"
-    }
+      groupName: 'rstack',
+      matchPackageNames: ["/rspress/", "/rslib/", "/rstest/", "/rsbuild/"],
+      groupSlug: 'rstack'
+    },
     {
       groupName: 'types',
       matchPackageNames: ['/^@types/'],
