@@ -1,0 +1,55 @@
+.switch-theme {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-s) var(--spacing-m);
+  font-size: 16px;
+  border-radius: var(--border-radius-circle);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  gap: 3px;
+  cursor: pointer;
+
+  .icon {
+    color: #ffffff;
+    transition: opacity 0.3s ease-in-out, transform 0.15s ease-in-out;
+  }
+
+  .sun {
+    opacity: 0;
+    transform: translateX(50%) rotate(30deg) scale(0.6);
+  }
+
+  .moon {
+    color: #F9CC45;
+    opacity: 1;
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: calc(100% - 3px);
+    aspect-ratio: 1 / 1;
+    background-color: #ffffff;
+    border-radius: var(--border-radius-circle);
+    left: 2px;
+    transition: left 0.3s ease-in-out;
+  }
+
+  &.dark {
+    &::after {
+      left: calc(50% + 3px);
+    }
+    .sun {
+      opacity: 1;
+      transform: translateX(0) rotate(0deg) scale(1);
+    }
+    .moon {
+      opacity: 0;
+      transform: translateX(-50%) rotate(-30deg) scale(0.6);
+    }
+  }
+}

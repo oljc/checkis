@@ -1,0 +1,29 @@
+{
+  "name": "checkis-monorepo",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "gen": "tsx scripts/gen.ts",
+    "build": "pnpm run gen && pnpm --filter checkis build",
+    "dev": "pnpm --filter website dev",
+    "test": "pnpm --filter checkis test",
+    "test:dev": "pnpm --filter checkis test:dev",
+    "check": "biome check --write",
+    "format": "biome format --write"
+  },
+  "author": "oljc",
+  "license": "MIT",
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@types/node": "^24.5.0",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

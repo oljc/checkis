@@ -1,0 +1,43 @@
+{
+  "name": "checkis",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./types": "./dist/types/index.d.ts",
+    "./package.json": "./package.json"
+  },
+  "unpkg": "./dist/checkis.min.js",
+  "browser": "./dist/checkis.min.js",
+  "files": [
+    "cjs",
+    "esm",
+    "types",
+    "checkis.js",
+    "checkis.min.js",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "test": "rstest",
+    "test:dev": "rstest watch"
+  },
+  "devDependencies": {
+    "@rslib/core": "^0.13.2",
+    "@rstest/core": "^0.3.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

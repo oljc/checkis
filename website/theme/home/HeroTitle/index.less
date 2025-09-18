@@ -1,0 +1,60 @@
+.move-title {
+  position: relative;
+  font-size: 90px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .check {
+    transition: opacity 0.3s var(--transition), transform 0.3s var(--transition);
+    transform: translateX(0);
+  }
+
+  .is {
+    color: #32f08c;
+  }
+
+  .writer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translate(-50%, -50%) translateX(50%);
+  }
+
+  &:hover {
+    .check {
+      opacity: 0;
+      transform: translateX(-20%);
+    }
+    .writer {
+      width: auto;
+      opacity: 1;
+      transform: translate(-50%, -50%) translateX(0);
+      transition: width 0.3s var(--transition), opacity 0.3s var(--transition),
+        transform 0.3s var(--transition);
+    }
+  }
+
+  .cursor {
+    font-weight: 300;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
