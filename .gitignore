@@ -4,6 +4,7 @@ dist/
 doc_build/
 build/
 coverage/
+core/src/index.ts
 .vscode/**/*
 !.vscode/settings.json
 !.vscode/extensions.json
