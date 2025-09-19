@@ -1,0 +1,109 @@
+# 快速开始
+
+import { PackageManagerTabs } from '@theme';
+
+Checkis 是一个轻量级、高性能、现代化、稳定可靠的 `is*` 判断工具函数库。开发者无需关心内部实现、 JavaScript `写法演进`，库长期维护。开箱即用让你的代码更简洁、更可靠，风格一致。
+
+## 依赖安装
+
+<PackageManagerTabs command="install checkis@latest" />
+
+### 使用示例
+
+#### ESM
+
+适用于现代化框架和支持 ES Module 的 Node.js 环境，天然支持 Tree-shaking。**（推荐）**
+
+```typescript
+import { isString, isNullish } from 'checkis';
+
+console.log(isString('hello')); // true
+```
+
+```typescript
+// 全量引入
+import * as checkis from 'checkis';
+
+console.log(checkis.isNumber(123));
+```
+
+#### CJS
+
+适用于 CommonJS 规范的项目或旧版 Node.js 环境
+
+```typescript
+// 全量引入
+const checkis = require('checkis');
+
+console.log(checkis.isString('hello'));
+```
+
+```typescript
+// 按需引入
+const { isString, isNumber } = require('checkis');
+
+console.log(isNumber(123));
+```
+
+## CDN 引入
+
+如果您不想使用包管理器，可以通过 CDN 直接引入。这种方式无需构建和安装，适合快速原型、静态站点，或需要直接在浏览器中运行的场景。借助公共 CDN 的缓存优化，你还能获得更快的加载速度和更简洁的接入体验。
+
+CDN选择方式：
+
+- **`@latest`**：始终获取最新版本，适合开发和测试环境
+- **`@1.0.0`**：指定具体版本号，推荐生产环境使用，确保版本稳定性
+- **无压缩版（`checkis.js`）**：包含完整代码和注释，适合开发调试
+- **压缩版（`checkis.min.js`）**：文件体积更小，适合生产环境
+
+:::tip 提示
+生产环境推荐使用 「固定版本号 + 压缩版文件」，避免因自动更新导致的潜在兼容性问题，同时提升加载性能。
+:::
+
+### unpkg
+
+```html
+<script src="https://unpkg.com/checkis@latest/checkis.min.js"></script>
+```
+
+### jsDelivr
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/checkis@latest/checkis.min.js"></script>
+```
+
+### cdnjs
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/checkis/latest/checkis.min.js"></script>
+```
+
+### 使用示例
+
+引入后，所有函数都会挂载到全局 `Checkis` 对象上：
+
+```html
+<script src="https://unpkg.com/checkis@latest/index.js"></script>
+<script>
+  console.log(Checkis.isString('hello'));
+  console.log(Checkis.isNumber(123));
+</script>
+```
+
+如果您不想每次都写 `Checkis.XXX`，可以使用解构赋值来简化：
+
+```html
+<script src="https://unpkg.com/checkis@latest/checkis.min.js"></script>
+<script>
+  // 解构需要的函数
+  const { isString, isNumber } = Checkis;
+
+  // 现在可以直接使用
+  console.log(isString('hello'));
+  console.log(isNumber(123));
+</script>
+```
+
+:::tip 提示
+如果您需要更好的按需引入体验，建议使用依赖安装方式，可以只导入需要的函数，减少包体积。
+:::
