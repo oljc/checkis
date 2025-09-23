@@ -1,7 +1,7 @@
 import { isString } from '@/isString';
 
 export const isUrl = (value: unknown): value is string => {
-  if(!isString(value)) return false;
+  if (!isString(value)) return false;
 
   try {
     const url = new URL(value);

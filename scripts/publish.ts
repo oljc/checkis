@@ -20,24 +20,17 @@ const main = async () => {
       module: './esm/index.js',
       types: './types/index.d.ts',
       exports: {
-        ".": {
+        '.': {
           import: './esm/index.js',
           require: './cjs/index.cjs',
-          types: './types/index.d.ts'
+          types: './types/index.d.ts',
         },
-        "./types": './types/index.d.ts',
-        "./package.json": './package.json'
+        './types': './types/index.d.ts',
+        './package.json': './package.json',
       },
       unpkg: './checkis.min.js',
       browser: './checkis.min.js',
-      files: [
-        'cjs',
-        'esm',
-        'types',
-        'checkis.js',
-        'checkis.min.js',
-        'README.md'
-      ]
+      files: ['cjs', 'esm', 'types', 'checkis.js', 'checkis.min.js', 'README.md'],
     };
     await fse.writeJson(join(PUBLISH, 'package.json'), newPkg, { spaces: 2 });
     console.log('Prepared:', PUBLISH);

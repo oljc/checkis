@@ -8,13 +8,17 @@ test('promises', () => {
 });
 
 test('thenable objects', () => {
+  // biome-ignore lint/suspicious/noThenProperty: <>
   expect(isPromise({ then: () => {} })).toBe(true);
+  // biome-ignore lint/suspicious/noThenProperty: <>
   expect(isPromise({ then: () => {} })).toBe(true);
 });
 
 test('non-promises', () => {
   expect(isPromise({})).toBe(false);
+  // biome-ignore lint/suspicious/noThenProperty: <>
   expect(isPromise({ then: 'not a function' })).toBe(false);
+  // biome-ignore lint/suspicious/noThenProperty: <>
   expect(isPromise({ then: null })).toBe(false);
   expect(isPromise([])).toBe(false);
   expect(isPromise('promise')).toBe(false);

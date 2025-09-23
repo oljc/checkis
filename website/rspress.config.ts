@@ -1,8 +1,11 @@
 import * as path from 'node:path';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { defineConfig } from '@rspress/core';
+import { pluginLlms } from '@rspress/plugin-llms';
+import { pluginChangelog } from './plugin/changelog';
 
 export default defineConfig({
+  plugins: [pluginLlms(), pluginChangelog()],
   root: path.join(__dirname, 'docs'),
   title: 'Checkis',
   lang: 'zh',

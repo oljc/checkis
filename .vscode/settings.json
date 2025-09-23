@@ -16,6 +16,8 @@
     "checkis",
     "Dedupe",
     "edgeone",
+    "llms",
+    "Llms",
     "nvmrc",
     "rsbuild",
     "rspress",
