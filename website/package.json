@@ -10,15 +10,10 @@
   },
   "dependencies": {
     "@arco-design/web-react": "^2.66.5",
-    "@react-three/drei": "^10.7.6",
-    "@react-three/fiber": "^9.3.0",
-    "@react-three/rapier": "^2.1.0",
     "@rspress/core": "2.0.0-beta.33",
     "@rspress/shared": "2.0.0-beta.33",
-    "meshline": "^3.3.1",
     "motion": "^12.23.19",
-    "ogl": "^1.0.11",
-    "three": "^0.180.0"
+    "ogl": "^1.0.11"
   },
   "devDependencies": {
     "@arco-plugins/unplugin-react": "2.0.0-beta.5",
