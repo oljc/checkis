@@ -114,8 +114,6 @@ export default function ChangeLog({ repo = 'oljc/checkis' }) {
       </div>
       <div className={`changelog-content ${isExpanded ? 'expanded' : 'collapsed'}`}>
         {commitList}
-        {commitList}
-        {commitList}
       </div>
     </div>
   );
