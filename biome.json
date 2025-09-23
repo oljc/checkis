@@ -38,6 +38,7 @@
       "a11y": {
         "noAutofocus": "off",
         "useButtonType": "off",
+        "noSvgWithoutTitle": "off",
         "useKeyWithClickEvents": "off",
         "noStaticElementInteractions": "off"
       }
