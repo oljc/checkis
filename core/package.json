@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@rslib/core": "^0.13.3",
-    "@rstest/core": "^0.4.0"
+    "@rstest/core": "^0.4.1"
   },
   "keywords": ["type-check", "validation", "is", "javascript", "typescript", "utils"],
   "publishConfig": {
