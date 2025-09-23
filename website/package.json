@@ -16,15 +16,17 @@
     "@rspress/core": "2.0.0-beta.33",
     "@rspress/shared": "2.0.0-beta.33",
     "meshline": "^3.3.1",
-    "motion": "^12.23.14",
+    "motion": "^12.23.19",
     "ogl": "^1.0.11",
     "three": "^0.180.0"
   },
   "devDependencies": {
     "@arco-plugins/unplugin-react": "2.0.0-beta.5",
     "@rsbuild/plugin-less": "^1.5.0",
+    "@rspress/plugin-llms": "2.0.0-beta.33",
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
-    "@types/three": "^0.180.0"
+    "@types/three": "^0.180.0",
+    "execa": "^9.6.0"
   }
 }
