@@ -1,28 +1,21 @@
-import { Dropdown, Menu } from '@arco-design/web-react';
-import { IconGithub, IconLanguage } from '@arco-design/web-react/icon';
 import { useLocation, useNav } from '@rspress/core/runtime';
+import { IconLanguage, IconGithub } from '@arco-design/web-react/icon';
+import { cn } from '@/utils/cn'
 import Search from '../Search';
 import SwitchTheme from '../SwitchTheme';
-import './index.less';
+import { Separator } from '../Separator';
+import styles from './index.module.less';
 import type { NavItem } from '@rspress/shared';
 
-const dropList = (
-  <Menu>
-    <Menu.Item key="1">Beijing</Menu.Item>
-    <Menu.Item key="2">Shanghai</Menu.Item>
-    <Menu.Item key="3">Guangzhou</Menu.Item>
-  </Menu>
-);
-
 const NavMenu = ({ items, pathname }: { items: NavItem[]; pathname: string }) => (
-  <nav className="nav-menu">
+  <nav>
     {items.map((item) => {
       if ('items' in item || Array.isArray(item)) {
         return <div>TODO</div>;
       } else {
         const isActive = new RegExp(item.activeMatch || item.link).test(pathname);
         return (
-          <a key={item.text} href={item.link} className={`nav-item ${isActive ? 'active' : ''}`}>
+          <a key={item.text} href={item.link} className={cn(styles.btn, isActive && styles.active)}>
             {item.text}
           </a>
         );
@@ -37,17 +30,21 @@ const NavBar = () => {
   const rightMenuItems = menuItems.filter((item) => (item.position ?? 'right') === 'right');
 
   return (
-    <header className="nav-wrap">
-      <div className="nav-left">Checkis</div>
-      <div className="nav-right">
+    <header className={styles.nav}>
+      <div className={styles.left}>Checkis</div>
+      <div className={styles.right}>
         <Search />
         <NavMenu items={rightMenuItems} pathname={pathname} />
+        <Separator orientation="vertical" />
         <SwitchTheme />
-        <Dropdown droplist={dropList} position="br">
+        <Separator orientation="vertical" />
+        <button className={styles.btn}>
           <IconLanguage />
-        </Dropdown>
-        <a href="https://github.com/arco-design/checkis" target="_blank" rel="noopener noreferrer">
+        </button>
+        <Separator orientation="vertical" />
+        <a className={styles.btn} href="https://github.com/arco-design/checkis" target="_blank" rel="noopener noreferrer">
           <IconGithub />
+          <span>1 Stars</span>
         </a>
       </div>
     </header>
