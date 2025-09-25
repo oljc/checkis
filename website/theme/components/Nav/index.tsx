@@ -42,7 +42,7 @@ const NavBar = () => {
           <IconLanguage />
         </button>
         <Separator orientation="vertical" />
-        <a className={styles.btn} href="https://github.com/arco-design/checkis" target="_blank" rel="noopener noreferrer">
+        <a className={styles.btn} href="https://github.com/oljc/checkis" target="_blank" rel="noopener noreferrer">
           <IconGithub />
           <span>1 Stars</span>
         </a>
