@@ -10,9 +10,7 @@ const main = async () => {
     // const imports = funNames.map((name) => `import { ${name} } from './${name}';`).join('\n');
     const exports = funNames.map((name) => `export { ${name} } from './${name}';`).join('\n');
     // const defaultExport = `export default {\n  ${funNames.join(',\n  ')}\n};`;
-    const header = `// Auto-generated. Do not edit manually\n// 自动生成，请勿手动修改\n`;
-    // const content = `${header}${imports}\n\n${exports}\n\n${defaultExport}\n`;
-    const content = `${header}${exports}\n`;
+    const content = `${exports}\n`;
     const indexPath = join(process.cwd(), 'core/src/index.ts');
     await writeFile(indexPath, content, 'utf8');
 
