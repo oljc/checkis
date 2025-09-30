@@ -1,8 +1,4 @@
 {
   "title": "API",
-  "pages": [
-    "isArray",
-    "isBigInt",
-    "isBoolean"
-  ]
+  "pages": ["isArray", "isBigInt", "isBoolean"]
 }

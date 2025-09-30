@@ -1,7 +1,4 @@
 {
   "title": "Documentation",
-  "pages": [
-    "start",
-    "api"
-  ]
+  "pages": ["start", "api"]
 }

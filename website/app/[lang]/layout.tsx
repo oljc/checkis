@@ -10,7 +10,6 @@ const { provider } = defineI18nUI(i18n, {
     zh: {
       displayName: '中文',
       search: '搜索文档',
-
     },
   },
 });
@@ -27,9 +26,7 @@ export default async function Layout({
   return (
     <html lang={lang}>
       <body>
-        <RootProvider i18n={provider(lang)}>
-          {children}
-        </RootProvider>
+        <RootProvider i18n={provider(lang)}>{children}</RootProvider>
       </body>
     </html>
   );

@@ -1,6 +1,8 @@
 export const isPromise = (value: unknown): value is Promise<unknown> => {
   return (
-    value instanceof Promise ||
-    (typeof value === 'object' && value !== null && typeof (value as any).then === 'function')
+    typeof value === 'object' &&
+    value !== null &&
+    typeof (value as PromiseLike<unknown>).then === 'function' &&
+    typeof (value as { catch: (...args: unknown[]) => unknown }).catch === 'function'
   );
 };

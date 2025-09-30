@@ -1,9 +1,8 @@
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
 
-
-@theme inline {
+.inline {
   --animate-shiny-text: shiny-text 8s infinite;
 
   @keyframes shiny-text {

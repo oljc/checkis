@@ -8,9 +8,7 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh" className={inter.className} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen">
-        {children}
-      </body>
+      <body className="flex flex-col min-h-screen">{children}</body>
     </html>
   );
 }
