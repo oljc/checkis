@@ -1,0 +1,92 @@
+---
+title: isArray
+description: 检查一个值是否为数组。
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+
+## 语法
+
+```typescript
+isArray(value: unknown): value is unknown[]
+```
+
+## 参数
+
+- `value` - 要检查的值
+
+## 返回值
+
+如果值是数组则返回 `true`，否则返回 `false`。
+
+## 示例
+
+### 基本用法
+
+```typescript title="index.ts"
+import { isArray } from 'checkis';
+
+// 数组类型
+console.log(isArray([])); // true
+console.log(isArray([1, 2, 3])); // true
+console.log(isArray(['a', 'b', 'c'])); // true
+console.log(isArray([null, undefined])); // true
+console.log(isArray(new Array(5))); // true
+
+// 非数组类型
+console.log(isArray({})); // false
+console.log(isArray('[]')); // false
+console.log(isArray(null)); // false
+console.log(isArray(undefined)); // false
+console.log(isArray(123)); // false
+console.log(isArray({ length: 0 })); // false
+```
+
+### TypeScript 类型守卫
+
+```typescript
+function processValue(value: unknown) {
+  if (isArray(value)) {
+    // TypeScript 现在知道 value 是 unknown[] 类型
+    console.log(`数组长度: ${value.length}`);
+    value.forEach((item, index) => {
+      console.log(`索引 ${index}: ${item}`);
+    });
+  } else {
+    console.log('不是数组类型');
+  }
+}
+```
+
+### 实际应用场景
+
+```typescript
+// 数据验证
+function validateArrayInput(input: unknown): unknown[] {
+  if (!isArray(input)) {
+    throw new Error('输入必须是数组');
+  }
+  return input;
+}
+
+// 安全的数组操作
+function safeArrayMap<T, R>(
+  value: unknown,
+  mapFn: (item: T, index: number) => R
+): R[] | null {
+  if (isArray(value)) {
+    return value.map(mapFn);
+  }
+  return null;
+}
+```
+
+<Callout>
+`isArray` 使用原生的 `Array.isArray()` 方法，这是检查数组类型最可靠的方式。它能正确识别所有数组类型，包括来自不同执行上下文（如 iframe）的数组。
+</Callout>
+
+## 相关函数
+
+- [`isEmpty`](/zh/api/isEmpty) - 检查值是否为空
+- [`isObject`](/zh/api/isObject) - 检查值是否为对象

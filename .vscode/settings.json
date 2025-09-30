@@ -16,12 +16,15 @@
     "checkis",
     "Dedupe",
     "edgeone",
+    "esnext",
+    "fumadocs",
     "llms",
     "Llms",
     "nvmrc",
     "rsbuild",
     "rspress",
     "rstack",
-    "rstest"
+    "rstest",
+    "tailwindcss"
   ]
 }

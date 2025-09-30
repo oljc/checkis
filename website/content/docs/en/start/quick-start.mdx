@@ -1,0 +1,38 @@
+---
+title: Quick Start
+description: Learn how to install and use checkis in your project.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+# Quick Start
+
+Welcome to the **checkis** documentation!
+This guide will help you quickly set up and start using this powerful type-checking utility library.
+
+## Installation
+
+Install checkis using your favorite package manager:
+
+```bash
+npm install checkis
+# or
+pnpm add checkis
+# or
+yarn add checkis
+```
+
+## Basic Usage
+
+```typescript
+import { isString, isNumber, isArray } from 'checkis';
+
+// Type checking examples
+console.log(isString('hello')); // true
+console.log(isNumber(42)); // true
+console.log(isArray([1, 2, 3])); // true
+```
+
+<Callout>
+checkis provides a comprehensive set of type-checking utilities for JavaScript and TypeScript projects.
+</Callout>

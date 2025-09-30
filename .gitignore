@@ -5,6 +5,7 @@ doc_build/
 build/
 coverage/
 core/src/index.ts
+next-env.d.ts
 .vscode/**/*
 !.vscode/settings.json
 !.vscode/extensions.json
@@ -17,6 +18,11 @@ core/src/index.ts
 .rspress/
 .cache/
 .biome-cache/
+.contentlayer
+.content-collections
+.source
+.next
+*.tsbuildinfo
 *.bak
 *.backup
 *.old

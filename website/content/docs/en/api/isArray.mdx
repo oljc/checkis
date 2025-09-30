@@ -1,0 +1,95 @@
+---
+title: isArray
+description: Checks whether a value is an array.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+# isArray
+
+Checks whether a value is an array.
+
+## Syntax
+
+```typescript
+isArray(value: unknown): value is unknown[]
+```
+
+## Parameters
+
+- `value` - The value to check
+
+## Return Value
+
+Returns `true` if the value is an array, `false` otherwise.
+
+## Examples
+
+### Basic Usage
+
+```typescript
+import { isArray } from 'checkis';
+
+// Array types
+console.log(isArray([])); // true
+console.log(isArray([1, 2, 3])); // true
+console.log(isArray(['a', 'b', 'c'])); // true
+console.log(isArray([null, undefined])); // true
+console.log(isArray(new Array(5))); // true
+
+// Non-array types
+console.log(isArray({})); // false
+console.log(isArray('[]')); // false
+console.log(isArray(null)); // false
+console.log(isArray(undefined)); // false
+console.log(isArray(123)); // false
+console.log(isArray({ length: 0 })); // false
+```
+
+### TypeScript Type Guard
+
+```typescript
+function processValue(value: unknown) {
+  if (isArray(value)) {
+    // TypeScript now knows value is unknown[] type
+    console.log(`Array length: ${value.length}`);
+    value.forEach((item, index) => {
+      console.log(`Index ${index}: ${item}`);
+    });
+  } else {
+    console.log('Not an array type');
+  }
+}
+```
+
+### Real-world Use Cases
+
+```typescript
+// Data validation
+function validateArrayInput(input: unknown): unknown[] {
+  if (!isArray(input)) {
+    throw new Error('Input must be an array');
+  }
+  return input;
+}
+
+// Safe array operations
+function safeArrayMap<T, R>(
+  value: unknown,
+  mapFn: (item: T, index: number) => R
+): R[] | null {
+  if (isArray(value)) {
+    return value.map(mapFn);
+  }
+  return null;
+}
+```
+
+<Callout>
+`isArray` uses the native `Array.isArray()` method, which is the most reliable way to check for array types. It correctly identifies all array types, including arrays from different execution contexts (like iframes).
+</Callout>
+
+## Related Functions
+
+- [`isEmpty`](/en/api/isEmpty) - Check if a value is empty
+- [`isObject`](/en/api/isObject) - Check if a value is an object

@@ -1,27 +1,31 @@
 {
   "name": "website",
-  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "rspress dev",
-    "build": "rspress build",
-    "preview": "rspress preview",
-    "type-check": "tsc --noEmit"
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "start": "next start",
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
-    "@arco-design/web-react": "^2.66.5",
-    "@rspress/core": "2.0.0-beta.33",
-    "@rspress/shared": "2.0.0-beta.33",
-    "motion": "^12.23.19",
-    "ogl": "^1.0.11"
+    "class-variance-authority": "^0.7.1",
+    "fumadocs-core": "15.8.0",
+    "fumadocs-mdx": "12.0.1",
+    "fumadocs-ui": "15.8.0",
+    "lucide-react": "^0.544.0",
+    "next": "15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "@arco-plugins/unplugin-react": "2.0.0-beta.5",
-    "@rsbuild/plugin-less": "^1.5.0",
-    "@rspress/plugin-llms": "2.0.0-beta.33",
-    "@types/node": "^24.5.2",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "24.5.2",
     "@types/react": "^19.1.13",
-    "@types/three": "^0.180.0",
-    "execa": "^9.6.0"
+    "@types/react-dom": "^19.1.9",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
   }
 }

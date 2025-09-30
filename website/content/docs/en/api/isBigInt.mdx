@@ -1,0 +1,122 @@
+---
+title: isBigInt
+description: Checks whether a value is a BigInt type.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+# isBigInt
+
+Checks whether a value is a BigInt type.
+
+## Syntax
+
+```typescript
+isBigInt(value: unknown): value is bigint
+```
+
+## Parameters
+
+- `value` - The value to check
+
+## Return Value
+
+Returns `true` if the value is a BigInt, `false` otherwise.
+
+## Examples
+
+### Basic Usage
+
+```typescript
+import { isBigInt } from 'checkis';
+
+// BigInt types
+console.log(isBigInt(BigInt(123))); // true
+console.log(isBigInt(BigInt('123'))); // true
+console.log(isBigInt(123n)); // true
+console.log(isBigInt(0n)); // true
+console.log(isBigInt(-123n)); // true
+
+// Non-BigInt types
+console.log(isBigInt(123)); // false
+console.log(isBigInt('123n')); // false
+console.log(isBigInt('123')); // false
+console.log(isBigInt({})); // false
+console.log(isBigInt([])); // false
+console.log(isBigInt(null)); // false
+console.log(isBigInt(undefined)); // false
+```
+
+### TypeScript Type Guard
+
+```typescript
+function processValue(value: unknown) {
+  if (isBigInt(value)) {
+    // TypeScript now knows value is bigint type
+    console.log(`BigInt value: ${value}`);
+    console.log(`Convert to string: ${value.toString()}`);
+    console.log(`Convert to number: ${Number(value)}`);
+  } else {
+    console.log('Not a BigInt type');
+  }
+}
+```
+
+### Real-world Use Cases
+
+```typescript
+// Large number arithmetic validation
+function safeBigIntOperation(a: unknown, b: unknown): bigint | null {
+  if (isBigInt(a) && isBigInt(b)) {
+    return a + b;
+  }
+  return null;
+}
+
+// Data type conversion
+function convertToBigInt(value: unknown): bigint | null {
+  if (isBigInt(value)) {
+    return value;
+  }
+
+  if (typeof value === 'number' || typeof value === 'string') {
+    try {
+      return BigInt(value);
+    } catch {
+      return null;
+    }
+  }
+
+  return null;
+}
+
+// API response validation
+interface ApiResponse {
+  id: unknown;
+  timestamp: unknown;
+}
+
+function validateApiResponse(response: ApiResponse) {
+  if (!isBigInt(response.id)) {
+    throw new Error('ID must be BigInt type');
+  }
+
+  if (!isBigInt(response.timestamp)) {
+    throw new Error('Timestamp must be BigInt type');
+  }
+
+  return {
+    id: response.id,
+    timestamp: response.timestamp
+  };
+}
+```
+
+<Callout>
+BigInt is a new data type introduced in ES2020 for representing arbitrary precision integers. It's very useful for handling large integers that exceed JavaScript's safe number range.
+</Callout>
+
+## Related Functions
+
+- [`isNumber`](/en/api/isNumber) - Check if a value is a number
+- [`isInteger`](/en/api/isInteger) - Check if a value is an integer

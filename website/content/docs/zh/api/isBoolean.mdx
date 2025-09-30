@@ -1,0 +1,67 @@
+---
+title: isBoolean
+description: 检查一个值是否为布尔值。
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+# isBoolean
+
+检查一个值是否为布尔值。
+
+## 语法
+
+```typescript
+isBoolean(value: unknown): value is boolean
+```
+
+## 参数
+
+- `value` - 要检查的值
+
+## 返回值
+
+如果值是布尔值则返回 `true`，否则返回 `false`。
+
+## 示例
+
+### 基本用法
+
+```typescript
+import { isBoolean } from 'checkis';
+
+// 布尔值类型
+console.log(isBoolean(true)); // true
+console.log(isBoolean(false)); // true
+
+// 非布尔值类型
+console.log(isBoolean('true')); // false
+console.log(isBoolean('false')); // false
+console.log(isBoolean(1)); // false
+console.log(isBoolean(0)); // false
+console.log(isBoolean(null)); // false
+console.log(isBoolean(undefined)); // false
+```
+
+### TypeScript 类型守卫
+
+```typescript
+function processValue(value: unknown) {
+  if (isBoolean(value)) {
+    // TypeScript 现在知道 value 是 boolean 类型
+    console.log(`布尔值: ${value}`);
+    console.log(`取反: ${!value}`);
+  } else {
+    console.log('不是布尔值类型');
+  }
+}
+```
+
+<Callout>
+`isBoolean` 只检查原始的布尔值类型（true 和 false），不会将其他"真值"或"假值"视为布尔值。
+</Callout>
+
+## 相关函数
+
+- [`isString`](/zh/api/isString) - 检查值是否为字符串
+- [`isNumber`](/zh/api/isNumber) - 检查值是否为数字

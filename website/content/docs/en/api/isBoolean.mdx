@@ -1,0 +1,67 @@
+---
+title: isBoolean
+description: Checks whether a value is a boolean.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+# isBoolean
+
+Checks whether a value is a boolean.
+
+## Syntax
+
+```typescript
+isBoolean(value: unknown): value is boolean
+```
+
+## Parameters
+
+- `value` - The value to check
+
+## Return Value
+
+Returns `true` if the value is a boolean, `false` otherwise.
+
+## Examples
+
+### Basic Usage
+
+```typescript
+import { isBoolean } from 'checkis';
+
+// Boolean types
+console.log(isBoolean(true)); // true
+console.log(isBoolean(false)); // true
+
+// Non-boolean types
+console.log(isBoolean('true')); // false
+console.log(isBoolean('false')); // false
+console.log(isBoolean(1)); // false
+console.log(isBoolean(0)); // false
+console.log(isBoolean(null)); // false
+console.log(isBoolean(undefined)); // false
+```
+
+### TypeScript Type Guard
+
+```typescript
+function processValue(value: unknown) {
+  if (isBoolean(value)) {
+    // TypeScript now knows value is boolean type
+    console.log(`Boolean value: ${value}`);
+    console.log(`Negated: ${!value}`);
+  } else {
+    console.log('Not a boolean type');
+  }
+}
+```
+
+<Callout>
+`isBoolean` only checks for primitive boolean types (true and false), and does not treat other "truthy" or "falsy" values as booleans.
+</Callout>
+
+## Related Functions
+
+- [`isString`](/en/api/isString) - Check if a value is a string
+- [`isNumber`](/en/api/isNumber) - Check if a value is a number

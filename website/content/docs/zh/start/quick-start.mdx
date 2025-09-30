@@ -1,0 +1,43 @@
+---
+title: 快速上手
+description: 学习如何在项目中安装和使用 checkis。
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+
+欢迎阅读 **checkis** 文档！
+本指南将帮助你快速完成安装并开始使用这个强大的类型检查工具库。
+
+## 安装
+
+使用你喜欢的包管理器进行安装：
+
+```package-install
+checkis@latest
+```
+
+## 基本用法
+
+```files
+project
+├── src
+│   ├── index.js
+│   └── utils
+│       └── helper.js
+├── package.json
+```
+
+```typescript lineNumbers
+import { isString, isNumber, isArray } from 'checkis';
+
+// 类型检查示例
+console.log(isString('hello')); // true
+console.log(isNumber(42)); // true
+console.log(isArray([1, 2, 3])); // true
+```
+
+<Callout>
+checkis 为 JavaScript 和 TypeScript 项目提供了全面的类型检查工具集。
+</Callout>
+
+
