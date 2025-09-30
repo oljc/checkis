@@ -17,7 +17,7 @@ export default async function Page(props: { params: Promise<{ lang: string; slug
     <DocsPage
       toc={page.data.toc}
       full={page.data.full}
-      lastUpdate={new Date(page.data.lastModified)}
+      lastUpdate={page.data.lastModified ?? new Date()}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
