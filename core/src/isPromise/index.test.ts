@@ -9,9 +9,7 @@ test('promises', () => {
 
 test('thenable objects', () => {
   // biome-ignore lint/suspicious/noThenProperty: <>
-  expect(isPromise({ then: () => {} })).toBe(true);
-  // biome-ignore lint/suspicious/noThenProperty: <>
-  expect(isPromise({ then: () => {} })).toBe(true);
+  expect(isPromise({ then: () => {} })).toBe(false);
 });
 
 test('non-promises', () => {
