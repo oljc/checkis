@@ -33,7 +33,7 @@
     "dev": "rslib build --watch",
     "test": "rstest",
     "test:dev": "rstest watch",
-    "type-check": "tsc --noEmit"
+    "check:types": "tsc --noEmit"
   },
   "devDependencies": {
     "@rslib/core": "^0.13.3",

@@ -27,7 +27,6 @@ jobs:
     name: Release
     if: github.repository == 'oljc/checkis' && github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    environment: npm
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5

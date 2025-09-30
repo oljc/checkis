@@ -5,6 +5,7 @@
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
+    "check:types": "tsc --noEmit",
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {

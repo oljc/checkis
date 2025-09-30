@@ -1,7 +1,8 @@
 {
   "name": "checkis-monorepo",
-  "description": "",
   "private": true,
+  "author": "oljc",
+  "license": "MIT",
   "scripts": {
     "gen": "tsx scripts/gen.ts",
     "dev": "pnpm --filter website dev",
@@ -10,23 +11,27 @@
     "publish": "pnpm run build && tsx scripts/publish.ts",
     "test": "pnpm --filter checkis test",
     "test:dev": "pnpm --filter checkis test:dev",
-    "check": "biome check --write",
+    "check": "biome check",
+    "check:write": "biome check --write",
+    "check:types": "pnpm -r run check:types",
     "format": "biome format --write",
-    "type-check": "pnpm -r run type-check"
+    "prepare": "lefthook install"
   },
-  "author": "oljc",
-  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@changesets/cli": "^2.29.7",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@types/node": "^24.5.2",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.2",
+    "lefthook": "^1.13.5",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
   "packageManager": "pnpm@10.17.0",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=9.15.9"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.2.4",
-    "@types/node": "^24.5.2",
-    "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.2",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
   }
 }
