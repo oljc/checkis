@@ -1,0 +1,44 @@
+name: ✨ Feature Request
+description: Suggest a new feature to help improve the project
+title: "[feat]: "
+labels: ["feat"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a feature! Please describe your idea in detail to help us better understand and evaluate this feature.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: ✨ Feature Description
+      description: A clear and concise description of the feature you'd like to add
+      placeholder: Describe the new feature you want...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: 💡 Use Case
+      description: Describe the specific use case for this feature
+      placeholder: e.g., When I want to... I hope to be able to...
+
+  - type: textarea
+    id: others
+    attributes:
+      label: 📋 Additional Information
+      description: Add any other relevant information
+      placeholder: References, examples of similar features, implementation suggestions, etc...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✅ Checklist
+      description: Please confirm the following before submitting
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate request
+          required: true
+        - label: The information I provided is accurate and complete
+          required: true

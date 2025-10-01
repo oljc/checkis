@@ -1,0 +1,44 @@
+name: ✨ 功能请求
+description: 一个新功能
+title: "[feat]: xxx"
+labels: ["feat"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你提出功能建议！请详细描述你的想法，这将帮助我们更好地理解和评估这个功能。
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: ✨ 功能描述
+      description: 清楚简洁地描述你希望添加的功能
+      placeholder: 描述你希望的新功能...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: 💡 使用场景
+      description: 描述这个功能的具体使用场景
+      placeholder: 例如：当我想要...的时候，我希望能够...
+
+  - type: textarea
+    id: others
+    attributes:
+      label: 📋 额外信息
+      description: 添加任何其他相关信息
+      placeholder: 参考资料、相似功能的例子、实现建议等...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✅ 确认
+      description: 在提交之前，请确认以下内容
+      options:
+        - label: 我已经搜索了现有的 issues，确认这不是重复请求
+          required: true
+        - label: 我提供的信息是准确和完整的
+          required: true

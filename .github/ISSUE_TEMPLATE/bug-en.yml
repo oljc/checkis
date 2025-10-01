@@ -1,0 +1,46 @@
+name: 🐛 Bug Report
+description: Report a bug to help us improve the project
+title: "[Bug]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to fill out this bug report! Please describe the issue in as much detail as possible to help us locate and fix the problem faster.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 🐛 Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the problem you encountered...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 📦 Version
+      description: What version are you using?
+      placeholder: e.g., v1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: others
+    attributes:
+      label: 📋 Additional Information
+      description: Add any other context about the problem here
+      placeholder: Environment info, screenshots, error logs, related links, etc...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✅ Checklist
+      description: Please confirm the following before submitting
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: The information I provided is accurate and complete
+          required: true
