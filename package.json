@@ -29,7 +29,7 @@
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.18.1",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=9.15.9"
