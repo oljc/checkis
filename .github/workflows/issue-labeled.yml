@@ -1,0 +1,55 @@
+name: Issue Labeled
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: read
+
+jobs:
+  issue-labeled:
+    permissions:
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invalid
+        if: github.event.label.name == 'invalid'
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment,close-issue'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hello @${{ github.event.issue.user.login }}, to help us communicate and handle issues more efficiently, we ask that issues be submitted following a specific format. Your issue did not meet the requirements and has been automatically closed. Please create a new issue following the template—we look forward to your feedback!
+
+            你好 @${{ github.event.issue.user.login }}，为了能够更高效地沟通和处理问题，我们希望 issue 按一定格式提交。你的 issue 因为不符合要求而被自动关闭。请按照模板重新创建 issue，我们很期待你的反馈！
+
+      - name: Need More Info
+        if: github.event.label.name == 'need more info'
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hello @${{ github.event.issue.user.login }}, to help others understand and resolve your issue more quickly, please provide some additional details or context information.
+
+            你好 @${{ github.event.issue.user.login }}，为了帮助查看此 issue 的人更快地理解和处理你的问题，请提供一些更多细节或上下文信息。
+
+      - name: PR Welcome
+        if: github.event.label.name == '🩵 PR Welcome'
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hi @${{ github.event.issue.user.login }}! We agree with this issue and warmly welcome PRs!
+            Anyone interested in helping solve this issue is encouraged to contribute!
+            If you want to claim it, please reply under this issue to avoid duplicate submissions. See the contribution guide for details.
+
+            嗨 @${{ github.event.issue.user.login}}！感谢你的反馈，我们很认同这个问题，也非常欢迎提交 PR !
+            欢迎任何有兴趣的开发者参与解决此问题，期待你的贡献！
+            如想认领，请在此 issue 下告知以避免多人重复提交，详情请参考贡献指南。
