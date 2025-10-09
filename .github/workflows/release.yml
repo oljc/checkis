@@ -20,7 +20,8 @@ on:
         default: 'main'
 
 permissions:
-  id-token: write
+  contents: read
+  pull-requests: write
 
 jobs:
   release:
