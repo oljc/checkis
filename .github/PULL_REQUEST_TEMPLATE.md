@@ -23,5 +23,4 @@
 - [ ] Code formatting checks pass (`pnpm check`)
 - [ ] Updated relevant API documentation
 
-<!--**Thank you for your contribution!** 🎉 -->
-<!-- Please make sure you have read the [Contributing Guide](./CONTRIBUTING.md) and followed the project's coding standards.-->
+<!-- Thank you for your contribution! Please make sure you have read the [Contributing Guide](./CONTRIBUTING.md) and followed the project's coding standards.-->
