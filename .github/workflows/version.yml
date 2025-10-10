@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: Changelog
         id: release
-        uses: google-github-actions/release-please-action@v4
+        uses: googleapis/release-please-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_TOKEN }}
           path: core
           release-type: node
           config-file: .github/release-please-config.json
