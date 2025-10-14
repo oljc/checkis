@@ -78,8 +78,6 @@ jobs:
         run: pnpm run publish
 
       - name: Publish
-        run: |
-          cd dist
-          pnpm publish --tag ${{ needs.release.outputs.channel }} --no-git-checks
+        run: pnpm publish ./dist --tag ${{ needs.release.outputs.channel }} --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
