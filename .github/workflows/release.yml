@@ -1,18 +1,19 @@
-name: Release
+name: Version
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
-      npm_tag:
+      channel:
         type: choice
         description: 'Version tag'
         required: true
-        default: 'alpha'
+        default: 'latest'
         options:
           - alpha
           - beta
           - rc
-          - canary
           - latest
       branch:
         description: 'Branch to release'
@@ -20,20 +21,41 @@ on:
         default: 'main'
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
   release:
-    name: Release
-    if: github.repository == 'oljc/checkis' && github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    outputs:
+      published: ${{ steps.version.outputs.published }}
+      channel: ${{ steps.version.outputs.channel || inputs.channel || 'latest' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          fetch-depth: 0
+
+      - name: Create Release
+        id: version
+        uses: oljc/release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version-file: 'core/package.json'
+          changelog-file: 'core/CHANGELOG.md'
+          channel: ${{ inputs.channel }}
+          branch: ${{ inputs.branch }}
+
+  publish:
+    needs: release
+    if: github.repository == 'oljc/checkis' && needs.release.outputs.published == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           fetch-depth: 1
-          ref: ${{ github.event.inputs.branch }}
+          ref: ${{ github.ref }}
 
       - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
         name: Install pnpm
@@ -52,7 +74,9 @@ jobs:
       - name: Publish Prepare
         run: pnpm run publish
 
-      - name: Publish to npm
+      - name: Publish
         run: |
           cd dist
-          pnpm publish --tag ${{ github.event.inputs.npm_tag }} --publish-branch ${{ github.event.inputs.branch }}
+          pnpm publish --tag ${{ needs.release.outputs.channel }} --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
