@@ -43,8 +43,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version-file: 'core/package.json'
           changelog-file: 'core/CHANGELOG.md'
-          channel: ${{ inputs.channel }}
-          branch: ${{ inputs.branch }}
+          channel: ${{ inputs.channel || 'latest' }}
+          branch: ${{ inputs.branch || 'main' }}
 
   publish:
     needs: release
