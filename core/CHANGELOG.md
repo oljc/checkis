@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 
 * **ci:** fix release workflow env @oljc ([caed6d3](https://github.com/oljc/checkis/commit/caed6d3a13095c7aa388b29ec58e46005c48d6aa))
 
+* **ci:** simplify publish command in release workflow @oljc ([27489d2](https://github.com/oljc/checkis/commit/27489d2ca3b87ba2b1418ae237e2480327cbd492))
+
 
 ## 1.1.0 (2025-10-14)
 
@@ -128,4 +130,5 @@ All notable changes to this project will be documented in this file.
 * **ci:** ensure full repository history is fetched during deployment @oljc ([1479ca8](https://github.com/oljc/checkis/commit/1479ca86aa4cb5ee836216a57bb16479ae649b9e))
 
 * **ci:** **workflow:** update deploy workflow config @oljc ([920095e](https://github.com/oljc/checkis/commit/920095e289187f668119c7962f0cf5630f1c48b0))
+
 
