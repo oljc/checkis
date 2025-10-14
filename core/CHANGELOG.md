@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.1 (2025-10-14)
+
+### 🔧 Others
+
+* **ci:** fix release workflow env @oljc ([caed6d3](https://github.com/oljc/checkis/commit/caed6d3a13095c7aa388b29ec58e46005c48d6aa))
+
+
 ## 1.1.0 (2025-10-14)
 
 ### ✨ Features
@@ -121,3 +128,4 @@ All notable changes to this project will be documented in this file.
 * **ci:** ensure full repository history is fetched during deployment @oljc ([1479ca8](https://github.com/oljc/checkis/commit/1479ca86aa4cb5ee836216a57bb16479ae649b9e))
 
 * **ci:** **workflow:** update deploy workflow config @oljc ([920095e](https://github.com/oljc/checkis/commit/920095e289187f668119c7962f0cf5630f1c48b0))
+
