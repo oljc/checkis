@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.1 (2025-10-15)
+
+### 🔧 Others
+
+* **chore:** enhance release workflow with multilingual changelog support @oljc ([9f65705](https://github.com/oljc/checkis/commit/9f65705443aebe621ac5d70a08ee7f8b16c9bef3))
+
+* **ci:** fix release workflow env @oljc ([caed6d3](https://github.com/oljc/checkis/commit/caed6d3a13095c7aa388b29ec58e46005c48d6aa))
+
+* **ci:** simplify publish command in release workflow @oljc ([27489d2](https://github.com/oljc/checkis/commit/27489d2ca3b87ba2b1418ae237e2480327cbd492))
+
+* **ci:** add API_TOKEN to release workflow environment @oljc ([6f9a253](https://github.com/oljc/checkis/commit/6f9a253f97e431c34a51667c5e01eaaed61a4c34))
+
+
 ## 1.1.0 (2025-10-14)
 
 ### ✨ Features
