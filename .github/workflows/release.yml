@@ -41,10 +41,12 @@ jobs:
         uses: oljc/release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          version-file: 'core/package.json'
-          changelog-file: 'core/CHANGELOG.md'
           channel: ${{ inputs.channel || 'latest' }}
           branch: ${{ inputs.branch || 'main' }}
+          version-file: 'core/package.json'
+          changelog-en: 'core/CHANGELOG.md'
+          changelog-zh: 'core/CHANGELOG.zh.md'
+          translate: 'true'
 
   publish:
     needs: release
