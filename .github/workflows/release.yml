@@ -39,6 +39,8 @@ jobs:
       - name: Create Release
         id: version
         uses: oljc/release@v1
+        env:
+          API_TOKEN: ${{ secrets.MODEL_TOKEN }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           channel: ${{ inputs.channel || 'latest' }}
