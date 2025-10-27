@@ -4,13 +4,14 @@
     'config:recommended',
     'schedule:weekly',
     'helpers:pinGitHubActionDigests',
+    ':disableDependencyDashboard'
   ],
   ignorePaths: ['**/node_modules/**'],
   packageRules: [
     {
-      matchPackageNames: ['**'],
-      semanticCommitType: 'chore',
-      rangeStrategy: 'bump',
+      "matchDatasources": ["github-actions"],
+      "groupName": "actions",
+      "groupSlug": "actions"
     },
     {
       groupName: 'rstack',
@@ -27,6 +28,11 @@
       groupSlug: 'all-non-major',
       matchPackageNames: ['**'],
       matchUpdateTypes: ['patch', 'minor'],
+    },
+    {
+      "groupName": "all major updates",
+      "groupSlug": "all-major",
+      "matchUpdateTypes": ["major"]
     },
     {
       matchDepTypes: ['peerDependencies'],
