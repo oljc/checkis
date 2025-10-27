@@ -38,7 +38,7 @@ jobs:
 
       - name: Create Release
         id: version
-        uses: oljc/release@v1
+        uses: oljc/release@c81f1c4637fbfbdcdb6ab6ddad7fdca2646af7df # v1
         env:
           API_TOKEN: ${{ secrets.MODEL_TOKEN }}
         with:
