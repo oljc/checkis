@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.1 (2025-11-05)
+
+### 🔧 Others
+
+* **chore(deps):** update dependencies in package.json and pnpm-lock.yaml @oljc ([89b7a05](https://github.com/oljc/checkis/commit/89b7a050e9138171f88dcb6fd36f6520d671e1ed))
+
+
 ## 1.2.0 (2025-10-30)
 
 ### ✨ Features
