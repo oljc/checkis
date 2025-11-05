@@ -12,7 +12,7 @@ export const isIDCard = (id: string) => {
 
   if (len === 15) {
     if (!/^\d{15}$/.test(id)) return false;
-    id = id.slice(0, 6) + '19' + id.slice(6);
+    id = `${id.slice(0, 6)}19${id.slice(6)}`;
   } else if (!/^\d{17}[\dX]$/.test(id)) {
     return false;
   }
