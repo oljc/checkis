@@ -36,8 +36,8 @@
     "check:types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@rslib/core": "^0.15.0",
-    "@rstest/core": "^0.5.1"
+    "@rslib/core": "^0.19.0",
+    "@rstest/core": "^0.8.0"
   },
   "keywords": [
     "type-check",
